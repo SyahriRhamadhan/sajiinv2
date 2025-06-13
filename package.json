@@ -2,23 +2,25 @@
   "name": "multi-tenant-bimbel",
   "private": true,
   "sideEffects": false,
-  "type": "module",
   "scripts": {
-    "build": "remix vite:build",
-    "dev": "remix vite:dev",
-    "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
-    "start": "remix-serve ./build/server/index.js"
+    "build": "remix build",
+    "start": "node ./build/index.js",
+    "dev": "ts-node-dev --respawn --transpile-only ./server/index.ts",
+    "serve": "ts-node ./server/index.ts"
   },
   "dependencies": {
+    "@remix-run/express": "^2.16.8",
     "@remix-run/node": "^2.16.8",
     "@remix-run/react": "^2.16.8",
     "@remix-run/serve": "^2.16.8",
+    "@types/node": "^24.0.1",
     "isbot": "^4.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.16.8",
+    "@types/express": "^5.0.3",
     "autoprefixer": "^10.4.19",
     "eslint": "^8.38.0",
     "eslint-plugin-import": "^2.28.1",
@@ -27,6 +29,9 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.4",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3",
     "vite": "^6.0.0"
   },
   "engines": {
